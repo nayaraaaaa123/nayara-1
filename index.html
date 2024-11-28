@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fluxograma - Cinderela</title>
+
+    <style>
+      .header-container {
+        width: 100%;
+        background-color: #6fa8dc; /* Cor azul inspirada no tema Cinderela */
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        border-radius: 50px;
+      }
+
+      .logo {
+        font-size: 3em;
+        font-weight: bold;
+        color: white;
+        margin: 0;
+        line-height: 1.2;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 100vh;
+        background-image: url("https://historiadormir.com.br/images/historias/cinderela.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+      }
+
+      .fluxograma {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 130px;
+        margin-left: 50px;
+        width: 500px;
+      }
+
+      .caixa {
+        background-color: #4a90e2; /* Azul inspirado no vestido da Cinderela */
+        padding: 60px;
+        margin: 30px 0;
+        border-radius: 15px;
+        color: white;
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      .caixa img {
+        width: 300px;
+        height: auto;
+      }
+
+      .seta {
+        font-size: 40px;
+        color: gold;
+        text-align: center;
+      }
+
+      .detalhes {
+        position: fixed;
+        top: 100px;
+        right: 50px;
+        width: 350px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 40px;
+        display: none;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .detalhes h3 {
+        margin-top: 0;
+        font-size: 22px;
+        color: gold;
+      }
+
+      .detalhes p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .detalhes img {
+        width: 50%;
+        border-radius: 40px;
+        margin-top: 10px;
+      }
+
+      .fechar {
+        display: inline-block;
+        background-color: gold;
+        color: black;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 15px;
+        text-align: center;
+      }
+
+      .fechar:hover {
+        background-color: #f1c40f;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">Cinderela</div>
+      </div>
+    </header>
+
+    <div class="fluxograma">
+      <!-- Etapa 1 -->
+      <div class="caixa" onclick="mostrarDetalhes(1)">
+        <img src="https://lh3.googleusercontent.com/proxy/RjImJYDNvv7VTBP1ErjR6bYDMiP0IgCx-T6AzYCm63Njb_bAdKAAeD4-M5projRRTfa0_4LBwEReeGBa6gPWjUSzANnopJNURaF8eaCL4JbBJJ471TCu" alt="Cinderela sendo maltratada" />
+        <p>Vida Difícil</p>
+      </div>
+      <div class="seta">↓</div>
+
+      <!-- Etapa 2 -->
+      <div class="caixa" onclick="mostrarDetalhes(2)">
+        <img src="https://www.odemocrata.com.br/cultura/wp-content/uploads/sites/5/2019/09/portaldoholanda-933483-imagem-foto-1amazonas.jpg" alt="Fada Madrinha" />
+        <p>Ajuda da Fada Madrinha</p>
+      </div>
+      <div class="seta">↓</div>
+
+      <!-- Etapa 3 -->
+      <div class="caixa" onclick="mostrarDetalhes(3)">
+        <img src="https://i.ytimg.com/vi/FEIgH9331q8/maxresdefault.jpg" alt="Cinderela no baile" />
+        <p>O Grande Baile</p>
+      </div>
+      <div class="seta">↓</div>
+
+      <!-- Etapa 4 -->
+      <div class="caixa" onclick="mostrarDetalhes(4)">
+        <img src="https://i.ytimg.com/vi/UwRfqKRbDdE/sddefault.jpg" alt="Príncipe encontra o sapatinho" />
+        <p>O Sapatinho Perdido</p>
+      </div>
+      <div class="seta">↓</div>
+
+      <!-- Etapa 5 -->
+      <div class="caixa" onclick="mostrarDetalhes(5)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUG96amnQ0KEb3fHIeEfTt5SGwDedjqaOpY08M-Q6O5tQDVA87OmHVtg0h90gzP7ouigQ&usqp=CAU" alt="Final feliz" />
+        <p>Final Feliz</p>
+      </div>
+    </div>
+
+    <!-- Detalhes -->
+    <div class="detalhes" id="detalhesCaixa1">
+      <h3>Vida Difícil</h3>
+      <p>Cinderela é maltratada pela madrasta e suas irmãs, mas mantém sua bondade e esperança.</p>
+      <img src="https://cdn.shopify.com/s/files/1/0601/5881/4621/products/20J00458_CD32_Front_500x750.jpg" alt="" />
+      <button class="fechar" onclick="fecharDetalhes()">Fechar</button>
+    </div>
+
+    <div class="detalhes" id="detalhesCaixa2">
+      <h3>Ajuda da Fada Madrinha</h3>
+      <p>A fada madrinha aparece e transforma Cinderela para o baile, incluindo uma carruagem mágica.</p>
+      <img src="https://www.storyberries.com/wp-content/uploads/2021/09/Cinderella_Fairy-Godmother-e1631783309482-1024x683.jpg" alt="" />
+      <button class="fechar" onclick="fecharDetalhes()">Fechar</button>
+    </div>
+
+    <div class="detalhes" id="detalhesCaixa3">
+      <h3>O Grande Baile</h3>
+      <p>Cinderela encanta a todos no baile, mas precisa sair antes da meia-noite.</p>
+      <img src="https://i.pinimg.com/originals/eb/05/cf/eb05cf7b23edc4f13c1880d9ab9a8f82.jpg" alt="" />
+      <button class="fechar" onclick="fecharDetalhes()">Fechar</button>
+    </div>
+
+    <div class="detalhes" id="detalhesCaixa4">
+      <h3>O Sapatinho Perdido</h3>
+      <p>O príncipe encontra o sapatinho perdido e procura por sua dona em todo o reino.</p>
+      <img src="https://i.pinimg.com/originals/25/2f/41/252f417f997e49a62a52f7d8df0d2089.jpg" alt="" />
+      <button class="fechar" onclick="fecharDetalhes()">Fechar</button>
+    </div>
+
+    <div class="detalhes" id="detalhesCaixa5">
+      <h3>Final Feliz</h3>
+      <p>Cinderela e o príncipe se casam, e ela realiza o sonho de uma vida feliz.</p>
+      <img src="https://images.saymedia-content.com/.image/t_share/MTc0NDYxNzI5MzExMzEzNTM3/best-disney-princess-weddings.jpg" alt="" />
+      <button class="fechar" onclick="fecharDetalhes()">Fechar</button>
+    </div>
+
+    <script>
+      function mostrarDetalhes(etapa) {
+        document.querySelectorAll(".detalhes").forEach(function (detalhe) {
+          detalhe.style.display = "none";
+        });
+
+        var detalhesCaixa = document.getElementById("detalhesCaixa" + etapa);
+        detalhesCaixa.style.display = "block";
+      }
+
+      function fecharDetalhes() {
+        document.querySelectorAll(".detalhes").forEach(function (detalhe) {
+          detalhe.style.display = "none";
+        });
+      }
+    </script>
+  </body>
+</html>
